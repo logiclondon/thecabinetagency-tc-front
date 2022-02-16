@@ -1,0 +1,135 @@
+h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    position: relative;
+}
+
+h1, h2, h3, .title {
+    font-family: $font-one;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+
+    p {
+        font-weight: bold;
+    }
+}
+
+//-----
+
+.title-sm {
+    font-size: 24px;
+
+    @include breakmob1 {
+        font-size: 20px;
+    }
+}
+
+.title-md {
+    font-size: 32px;
+    line-height: 1;
+
+    @include breaklarge1 {
+        font-size: 28px;
+    }
+
+    @include breakmob1 {
+        font-size: 24px;
+    }
+}
+
+.title-lg {
+    font-size: 50px;
+    line-height: 1;
+
+    @include break3 {
+        font-size: 45px;
+    }
+
+    @include breakmob1 {
+        font-size: 25px;
+    }
+}
+
+.title-ul-1 {
+    font-size: 3.8vw;
+
+    @include break3 {
+        font-size: 40px;
+    }
+
+    @include breakmob1 {
+        font-size: 28px;
+    }
+}
+
+.title-ul-2 {
+    font-size: 5.2vw;
+
+    @include break3 {
+        font-size: 48px;
+    }
+
+    @include breakmob1 {
+        font-size: 34px;
+    }
+}
+
+//-----
+
+.text {
+    text-transform: none;
+
+    &.long {
+        text-transform: none;
+
+        ul {
+            margin-bottom: 25px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        strong {
+            text-transform: uppercase;
+            font-family:$font-one;
+            line-height:1;
+            font-size: 32px;
+
+            @include breaklarge1 {
+                font-size: 28px;
+            }
+
+            @include breakmob1 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    p {
+        font-weight: normal;
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ul {
+        li {
+            position: relative;
+            font-weight: normal;
+            padding-left: 14px;
+
+            &:before {
+                content: '•';
+                position: absolute;
+                opacity: .5;
+                left: 0;
+                top: 1px;
+            }
+        }
+    }
+}

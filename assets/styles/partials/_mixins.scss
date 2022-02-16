@@ -1,0 +1,158 @@
+// ---- Mixins -----
+
+@mixin breaklarge1 {
+	@media only screen and (max-width: 1600px) {
+		@content;
+	}
+}
+
+@mixin break0 {
+	@media only screen and (max-width: 1480px) {
+		@content;
+	}
+}
+
+@mixin break1 {
+	@media only screen and (max-width: 1260px) {
+		@content;
+	}
+}
+
+@mixin break2 {
+	@media only screen and (max-width: 1160px) {
+		@content;
+	}
+}
+
+@mixin break3 {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin breaktab0 {
+	@media only screen and (max-width: 1000px) {
+		@content;
+	}
+}
+
+@mixin breaktab1 {
+	@media only screen and (max-width: 900px) {
+		@content;
+	}
+}
+
+@mixin breaktab2 {
+	@media only screen and (max-width: 780px) {
+		@content;
+	}
+}
+
+@mixin breaktab3 {
+	@media only screen and (max-width: 760px) {
+		@content;
+	}
+}
+
+@mixin breakmob1 {
+	@media only screen and (max-width: 640px) {
+		@content;
+	}
+}
+
+@mixin breakmob2 {
+	@media only screen and (max-width: 460px) {
+		@content;
+	}
+}
+
+@mixin breakh1 {
+	@media only screen and (max-height: 900px) {
+		@content;
+	}
+}
+
+@mixin breakh2 {
+	@media only screen and (min-height: 901px) {
+		@content;
+	}
+}
+
+// ----
+
+@mixin transition($property, $duration, $type:linear) {
+	transition: $property #{$duration}s ease-in;
+}
+
+// ----
+
+@mixin center($param1: 50%, $param2: 50%) {
+    left: $param1;
+    top: $param2;
+    transform: translate(-50%, -50%);
+}
+
+@mixin center-bottom($param: 0) {
+    left: 50%;
+    top: auto;
+    bottom: $param;
+    transform: translateX(-50%);
+}
+
+@mixin center-top($param: '0') {
+    left: 50%;
+    top: $param;
+    bottom: auto;
+    transform: translateX(-50%);
+}
+
+@mixin center-right($param: 0) {
+    left: auto;
+    right: $param;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-left($param: 0) {
+    right: auto;
+    left: $param;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-reset() {
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+}
+
+@mixin padding-left {
+    padding-left: 50px !important;
+    box-sizing: border-box !important;
+
+    @include break3 {
+        padding-left: 40px !important;
+    }
+}
+
+@mixin padding-both {
+    padding-left: 50px !important;
+    padding-right:50px !important;
+    box-sizing: border-box !important;
+
+    @include break3 {
+        padding-left: 40px !important;
+        padding-right:40px !important;
+    }
+}
+
+@mixin padding-left-reset {
+    padding-left: 0 !important;
+}
+
+@mixin padding-both-reset {
+    padding-left: 0 !important;
+    padding-right:0 !important;
+}

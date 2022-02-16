@@ -1,0 +1,298 @@
+.about {
+
+    .mod-content-one {
+        background-color: $color-one;
+        color: $color-five;
+        overflow: hidden;
+
+        >.container {
+            min-height: 100vh;
+        }
+
+        .content-liquid {
+            a {
+                color:$color-five;
+                cursor:   default;
+            }
+        }
+
+        .wrapper-content {
+            position: absolute;
+            @include center();
+            width: 44vw;
+            text-align: center;
+            z-index: 10;
+
+            @include break3 {
+                width: 70%;
+            }
+
+            @include breakmob1 {
+                width: 100%;
+            }
+
+            em {
+                font-family: $font-two;
+                text-transform: none;
+                font-weight: normal;
+                display: block;
+                line-height: .9;
+                margin-bottom: 22px;
+
+                @include breaktab1 {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        a {
+            color: $color-five;
+        }
+    }
+
+    .mod-content-two {
+        background-color: $color-two;
+        color: $color-five;
+
+        .col {
+            width: 50%;
+
+            @include breaktab1 {
+                width: 100%;
+            }
+
+            >.container {
+                min-height: 100vh;
+
+                @include breaktab1 {
+                    min-height: auto;
+                }
+            }
+
+            &:first-child {
+                height: 100vh;
+
+                @include breakmob1 {
+                    height: 60vh;
+                }
+            }
+        }
+
+        .content {
+            max-width: 560px;
+            width: 80%;
+            position: absolute;
+            @include center();
+
+            @include breaktab1 {
+                position: relative;
+                @include  center-reset();
+                max-width:100%;
+                width:    100%;
+                padding:  50px 0;
+            }
+
+            .title {
+                margin-bottom: 15px;
+            }
+
+            .text {
+                font-size: $font-main-size + 2;
+
+                @include breakmob1 {
+                    font-size: $font-main-size;
+                }
+            }
+        }
+    }
+
+    .mod-content-three {
+        background-color: $color-one;
+
+        >.container {
+            height: 100vh;
+        }
+
+        .wrapper-content {
+            position: absolute;
+            @include center();
+            width: 60%;
+
+            @include break3 {
+                width: 70%;
+            }
+
+            @include breakmob1 {
+                width: 90%;
+            }
+
+            >.title {
+                text-align: left;
+                font-style: italic;
+                font-family:$font-two;
+                color: $color-five;
+                font-weight:   100;
+                text-transform:none;
+                margin-bottom: 12px;
+                position: absolute;
+                top: 100px;
+                z-index:10;
+
+                @include breakmob1 {
+                    top: 60px;
+                }
+            }
+
+            p {
+                margin-bottom: 30px;
+                text-align: right;
+                box-sizing: border-box;
+
+                @include breakmob1 {
+                    margin-bottom: 20px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .scrolling-text {
+            height: 100vh !important;
+            overflow: hidden;
+        }
+    }
+
+    .mod-content-four {
+        background-color: $color-two;
+        min-height: 0;
+
+        >.container {
+            height: 100vh;
+            overflow: hidden;
+
+            @include breaktab1 {
+                height: auto;
+            }
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:  translate(-50%,-50%);
+
+            &.is-desk {
+                @include breaktab1 {
+                    display: none;
+                }
+            }
+
+            &.is-mob {
+                position: relative;
+                display: none;
+                width: 100%;
+                height: auto;
+                top: 0;
+                left:0;
+                transform: none;
+
+                @include breaktab1 {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .mod-content-five-extra {
+        height: 15vh;
+        position: relative;
+        width: 100%;
+        background-color: #f0eae9;
+        font-family: $font-two;
+        font-style: italic;
+
+        @include break3 {
+            height: 10vh;
+        }
+
+        .container {
+            position: absolute;
+        }
+
+        &.top {
+            .container {
+                @include center-bottom();
+
+                @include break0 {
+                    padding-left: 50px !important;
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        &.bottom {
+            height: 7vh;
+
+            .container {
+                @include center-top();
+                text-align: right;
+            }
+        }
+    }
+
+    .mod-content-five {
+        background-color: #f0eae9;
+        min-height: 70vh;
+        position: static;
+        display: flex;
+        align-items: center;
+
+        @include break3 {
+            min-height: 60vh;
+        }
+
+        @include breaktab1 {
+            min-height: 35vh;
+        }
+
+        .img {
+            padding: 5% 0;
+            box-sizing: border-box;
+        }
+    }
+
+    .mod-content-six {
+        background-color: $color-one;
+
+        >.container {
+            height: 100vh;
+
+            .img {
+                position: absolute;
+                @include center(51%, 50%);
+                width: 100%;
+
+                img {
+                    display: block;
+                    transform: scale(1.6);
+
+                    @include break2 {
+                        transform: scale(1.4);
+                    }
+
+                    @include breaktab1 {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+    }
+
+}

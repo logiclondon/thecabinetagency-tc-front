@@ -1,0 +1,208 @@
+.container {
+    margin: auto;
+    position: relative;
+    max-width: 1400px;
+    width: calc(100% - 80px);
+    box-sizing: border-box;
+
+    @include break3 {
+        width: calc(100% - 60px) !important;
+        @include padding-left-reset();
+    }
+
+    @include breaktab1 {
+        width: calc(100% - 50px) !important;
+    }
+
+    &.disabled {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    &.lg {
+        max-width: 100%;
+        width: 94%;
+    }
+
+    &.md {
+        max-width: 1260px;
+
+        @include breaklarge1 {
+            max-width: 1180px;
+        }
+    }
+
+    &.sm {
+        max-width: 860px;
+
+        @include breaklarge1 {
+            max-width: 660px;
+        }
+    }
+
+    &.full {
+        max-width: 100%;
+        width: calc(100% - 70px);
+
+        @include breakmob1 {
+            width: calc(100% - 50px);
+        }
+    }
+}
+
+//---------
+
+.cols {
+    display: flex;
+    justify-content: space-between;
+
+    &.breaktab1 {
+        @include breaktab1 {
+            display: block;
+        }
+    }
+
+    &.break3 {
+        @include break3 {
+            display: block;
+        }
+    }
+    
+    .col {
+        position: relative;
+    }
+
+    &.is-reversed {
+        flex-direction: row-reverse;
+    }
+
+    &.is-grid {
+        flex-wrap: wrap;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+
+        @include breakmob1 {
+            width: 100%;
+            margin-left: auto;
+        }
+
+        &:after {
+            content: "";
+            flex: auto;
+        }
+    }
+}
+
+.cols:not(.keep) {
+    @include breakmob1 {
+        display: block;
+    }
+}
+
+// -------
+
+.has-padding-both,
+.has-padding-bottom,
+.has-padding-top {
+    box-sizing: border-box;
+}
+
+.has-padding-both {
+    padding: 90px 0;
+
+    @include breaklarge1 {
+        padding: 70px 0;
+    }
+
+    @include breakmob1 {
+        padding: 50px 0;
+    }
+}
+
+.has-padding-top {
+    padding: 90px 0 0 0;
+
+    @include breaklarge1 {
+        padding: 70px 0 0 0;
+    }
+
+    @include breakmob1 {
+        padding: 50px 0 0 0;
+    }
+}
+
+.has-padding-bottom {
+    padding: 0 0 90px 0;
+
+    @include breaklarge1 {
+        padding: 0 0 70px 0;
+    }
+
+    @include breakmob1 {
+        padding: 0 0 50px 0;
+    }
+}
+
+.has-content-bottom {
+    margin-bottom: 50px;
+
+    @include breaklarge1 {
+        margin-bottom: 35px;
+    }
+}
+
+.has-content-top {
+    margin-top: 50px;
+
+    @include breaklarge1 {
+        margin-top: 35px;
+    }
+}
+
+.has-content-both {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    @include breaklarge1 {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+}
+
+// ---
+
+.has-margin-both {
+    margin: 90px 0;
+
+    @include breaklarge1 {
+        margin: 70px 0;
+    }
+
+    @include breakmob1 {
+        margin: 50px 0;
+    }
+}
+
+.has-margin-top {
+    margin: 90px 0 0 0;
+
+    @include breaklarge1 {
+        margin: 70px 0 0 0;
+    }
+
+    @include breakmob1 {
+        margin: 50px 0 0 0;
+    }
+}
+
+.has-margin-bottom {
+    margin: 0 0 90px 0;
+
+    @include breaklarge1 {
+        margin: 0 0 70px 0;
+    }
+
+    @include breakmob1 {
+        margin: 0 0 50px 0;
+    }
+}

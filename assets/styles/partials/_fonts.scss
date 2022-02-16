@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('~static/fonts/Avenir-Roman.eot');
+    src: url('~static/fonts/Avenir-Roman.eot?#iefix') format('embedded-opentype'),
+    url('~static/fonts/Avenir-Roman.woff2') format('woff2'),
+    url('~static/fonts/Avenir-Roman.woff') format('woff'),
+    url('~static/fonts/Avenir-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Cond';
+    src: url('~static/fonts/HelveticaNeue-BoldCond.eot');
+    src: url('~static/fonts/HelveticaNeue-BoldCond.eot?#iefix') format('embedded-opentype'),
+    url('~static/fonts/HelveticaNeue-BoldCond.woff2') format('woff2'),
+    url('~static/fonts/HelveticaNeue-BoldCond.woff') format('woff'),
+    url('~static/fonts/HelveticaNeue-BoldCond.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Cond';
+    src: url('~static/fonts/HelveticaNeue-Condensed.eot');
+    src: url('~static/fonts/HelveticaNeue-Condensed.eot?#iefix') format('embedded-opentype'),
+    url('~static/fonts/HelveticaNeue-Condensed.woff2') format('woff2'),
+    url('~static/fonts/HelveticaNeue-Condensed.woff') format('woff'),
+    url('~static/fonts/HelveticaNeue-Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BaskervilleBQ';
+    src: url('~static/fonts/BaskervilleBQ-Italic.eot');
+    src: url('~static/fonts/BaskervilleBQ-Italic.eot?#iefix') format('embedded-opentype'),
+    url('~static/fonts/BaskervilleBQ-Italic.woff2') format('woff2'),
+    url('~static/fonts/BaskervilleBQ-Italic.woff') format('woff'),
+    url('~static/fonts/BaskervilleBQ-Italic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+//-----
+
+@font-face {
+    font-family: 'fontello';
+    src: url('~static/fonts/fontello.eot?14222073');
+    src: url('~static/fonts/fontello.eot?14222073#iefix') format('embedded-opentype'),
+    url('~static/fonts/fontello.woff2?14222073') format('woff2'),
+    url('~static/fonts/fontello.woff?14222073') format('woff'),
+    url('~static/fonts/fontello.ttf?14222073') format('truetype'),
+    url('~static/fonts/fontello.svg?14222073#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before { content: '\f099'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-youtube:before { content: '\f16a'; } /* '' */
+.icon-instagram:before { content: '\f16d'; } /* '' */
+.icon-spotify:before { content: '\f1bc'; } /* '' */
+.icon-pinterest:before { content: '\f231'; } /* '' */
+.icon-vimeo:before { content: '\f27d'; } /* '' */
+.icon-linkedin:before { content: '\f30c'; } /* '' */

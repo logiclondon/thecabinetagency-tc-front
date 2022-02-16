@@ -1,0 +1,336 @@
+.liquid {
+    padding-top: 90px;
+
+    header {
+        display: none;
+    }
+
+    &:before {
+        display: none;
+    }
+
+    .header-alt {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1000;
+    }
+
+    section {
+        @include break3 {
+            @include padding-left-reset;
+        }
+    }
+
+    @include breaklarge1 {
+        padding-top: 80px;
+    }
+
+    @include breakmob1 {
+        padding-top: 65px;
+    }
+
+    .mod-content-one {
+        background-color: $color-five;
+    }
+
+    footer {
+        .cols {
+            @include break3 {
+                @include padding-left-reset;
+            }
+        }
+
+        .social {
+            .alt-only {
+                display: inline-block;
+            }
+        }
+    }
+
+    //-----
+
+    .mod-content-one {
+
+        .wrapper-list {
+            .item {
+                margin-left: auto;
+                margin-right: auto;
+
+                a {
+                    display: block;
+                    padding-bottom: 54%;
+
+                    @include breaktab1 {
+                        padding-bottom: 0;
+                        background-image:none;
+                    }
+                }
+
+                &:first-child {
+                    a {
+                        padding-bottom: 0;
+                        min-height: calc(100vh - 90px);
+
+                        @include breaklarge1 {
+                            min-height: calc(100vh - 80px);
+                        }
+
+                        @include breaktab1 {
+                            min-height: 0;
+                            background-image:none;
+                        }
+                    }
+                }
+
+                .img-mob {
+                    display: none;
+
+                    @include breaktab1 {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .mod-content-two {
+        background-color: $color-one;
+        min-height: 0;
+    }
+
+    //------
+
+    .wrapper-content {
+        position:  absolute;
+        min-height:200px;
+        padding:   50px;
+        box-sizing:border-box;
+        max-width: 550px;
+        width:     100%;
+
+        @include breaklarge1 {
+            padding:   40px;
+        }
+
+        @include breaktab1 {
+            position:  relative;
+            min-height:0;
+            padding:   30px;
+            max-width: 100%;
+        }
+
+        @include breakmob1 {
+            padding: 40px 20px;
+        }
+
+        &.top_right {
+            top:   8%;
+            right: 5%;
+        }
+
+        &.top_left {
+            top:   8%;
+            left:  5%;
+        }
+
+        &.bottom_right {
+            bottom:8%;
+            right: 5%;
+        }
+
+        &.bottom_left {
+            bottom:8%;
+            left:  5%;
+        }
+
+        &.top_right,
+        &.top_left,
+        &.bottom_right,
+        &.bottom_left {
+            @include breaktab1 {
+                bottom:0;
+                top:   0;
+                left:  0;
+                right: 0;
+            }
+        }
+
+        .logo-cat {
+            margin-bottom: 30px;
+            width: 90%;
+            font-family: $font-two;
+            font-size: 35px;
+            font-style: italic;
+            font-weight: 100;
+            text-transform: none;
+            margin-left: -5px;
+
+            @include breakmob1 {
+                font-size: 25px;
+            }
+
+            &.logo-cat-weekly-edit {
+                max-width: 300px;
+
+                @include breaktab1 {
+                    width: 70%;
+                }
+            }
+
+            &.logo-cat-liquid {
+                max-width: 380px;
+            }
+        }
+
+        .title {
+            //font-family: $font-three;
+            font-family: $font-one;
+            font-weight: bold;
+            margin-bottom: 20px;
+
+            //-----
+            font-size: 38px;
+            line-height: 1;
+
+            @include breaklarge1 {
+                font-size: 34px;
+            }
+
+            @include breakmob1 {
+                font-size: 28px;
+            }
+
+            //-----
+        }
+
+        .credits {
+            margin-bottom: 12px;
+
+            strong {
+                text-transform: uppercase;
+            }
+        }
+
+        .summary {
+            max-height: 45px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .date {
+            font-style: italic;
+        }
+    }
+
+    //-----
+
+    &.article {
+
+        .wrapper-intro {
+            .container {
+                min-height: calc(100vh - 90px);
+
+                @include breaklarge1 {
+                    min-height: calc(100vh - 80px);
+                }
+
+                @include breaktab1 {
+                    background-image:none;
+                    min-height: 0;
+                }
+            }
+
+            .img-mob {
+                display: none;
+
+                @include breaktab1 {
+                    display: block;
+                }
+            }
+        }
+
+        .wrapper-intro-alt {
+            .date {
+                font-style: italic;
+            }
+
+            .date, .credits {
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-family: $font-three;
+                font-weight: bold;
+                margin-bottom: 12px;
+            }
+
+            .logo-cat {
+                width: 70%;
+                margin-bottom: 60px;
+            }
+        }
+
+        .wrapper-block {
+            .text {
+                &.is-white {
+                    h2, h3, h4, p, a {
+                        color: #FFF !important;
+                    }
+                }
+            }
+        }
+
+        .text {
+            &.long {
+                h2, h3, h4 {
+                    margin-bottom: 22px;
+                    line-height: 1;
+                    color: $color-one;
+                }
+
+                img, iframe, div {
+                    margin-bottom: 30px;
+                }
+
+                h2 {
+                    font-family: $font-two;
+                    font-style: italic;
+                    text-transform: none;
+                    font-size: 3.8vw;
+                    font-weight: normal;
+                    margin-bottom: 40px;
+
+                    @include break3 {
+                        font-size: 40px;
+                    }
+
+                    @include breakmob1 {
+                        font-size: 34px;
+                    }
+                }
+
+                h3, h4 {
+                    font-size: 32px;
+
+                    @include breaklarge1 {
+                        font-size: 28px;
+                    }
+
+                    @include breakmob1 {
+                        font-size: 24px;
+                    }
+                }
+
+                h4 {
+                    font-family: $font-two;
+                    font-style: italic;
+                }
+
+            }
+        }
+
+    }
+
+}

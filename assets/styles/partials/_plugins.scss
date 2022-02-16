@@ -1,0 +1,207 @@
+.mce_inline_error:not(input), #mce-success-response {
+    background-color: transparent !important;
+    color: $color-one !important;
+    padding: 7px 0 !important;
+    font-weight: normal !important;
+    position: absolute;
+    bottom: -46px;
+}
+
+#mce-success-response {
+    bottom: -32px;
+    color: $color-two !important;
+}
+
+.swiper-button-prev {
+    position: absolute;
+    z-index: 1;
+    outline: none;
+    width: 45px;
+    height: 45px;
+    border: 0;
+    left: 70px;
+    top: calc(50% - 20px);
+    text-indent: -9000px;
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 30.3 53.4' style='enable-background:new 0 0 30.3 53.4;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D%0A%3C/style%3E%3Cg%3E%3Cpolygon class='st0' points='3.6,53.4 0,49.8 23.1,26.7 0,3.6 3.6,0 30.3,26.7 '/%3E%3C/g%3E%3C/svg%3E");
+    background-position: center;
+    background-size: 45px 45px;
+    transform: rotate(180deg);
+
+    @include break3 {
+        display: none;
+    }
+}
+
+.swiper-button-next {
+    left: auto;
+    right:70px;
+    @extend .swiper-button-prev;
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 30.3 53.4' style='enable-background:new 0 0 30.3 53.4;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D%0A%3C/style%3E%3Cg%3E%3Cpolygon class='st0' points='3.6,53.4 0,49.8 23.1,26.7 0,3.6 3.6,0 30.3,26.7 '/%3E%3C/g%3E%3C/svg%3E");
+    transform: none;
+}
+
+//--------------- PLYR -----------------
+
+.plyr__controls {
+    opacity: 0;
+    background: none !important;
+    z-index: -1;
+    visibility: hidden;
+}
+
+.plyr--playing .plyr__controls {
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+}
+
+//.plyr__control--overlaid {
+//    background-color: rgba(255,255,255,.6);
+//}
+
+.plyr--playing .plyr__control--overlaid {
+    opacity: 1;
+    visibility: visible;
+}
+
+.plyr--playing .img span {
+    opacity: 0;
+}
+
+.plyr--full-ui input[type=range] {
+    color: rgba(41,41,41,.5) !important;
+}
+
+.plyr__control--overlaid:focus, .plyr__control--overlaid:hover {
+    //background-color: rgba(41,41,41,.2) !important;
+    background-color: transparent !important;
+}
+
+.plyr__controls button:hover {
+    background-color: $color-one !important;
+}
+
+.plyr--full-ui > button {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+    background-color: rgba(0,0,0,0);
+
+    svg {
+        position:absolute;
+        @include center();
+        width:  50px;
+        height: 50px;
+        display:none;
+    }
+}
+
+//------- LAZY LOAD --------
+
+img[lazy='loaded'], .bg-img[lazy=loaded] {
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: .3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: ease-out;
+
+    @-webkit-keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}
+
+//------- ANIMATIONS --------
+
+.wave-anim {
+    position: fixed;
+    top: 0;
+    left:0;
+    width:    100vw;
+    height:   100vh;
+    overflow:hidden;
+    z-index:    800;
+
+    @include break2 {
+        display: none !important;
+    }
+
+    &.to-hide {
+        visibility: hidden;
+        z-index: -1;
+    }
+
+    &.to-anim::after {
+        content:  "";
+        position: absolute;
+        bottom: -50%;
+        left:   -50%;
+        height:200vw;
+        width: 200vw;
+        z-index: 100;
+        box-sizing: border-box;
+        background-color:$color-five;
+        border-radius: 40%;
+        animation: spin 3s linear forwards;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100%) rotate(360deg);
+    }
+}
+
+//-----
+
+.content-liquid {
+    a {
+        color: $color-two;
+        display: inline-block;
+        position: relative;
+        text-decoration: none !important;
+        text-transform: uppercase;
+
+        span {
+            color: transparent;
+            position: relative;
+
+            @include break2 {
+                color: inherit;
+            }
+        }
+
+        canvas {
+            padding: 0 !important;
+            position: absolute;
+            top:-1.2vw;
+            left:  50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            opacity: 1;
+
+            @include break2 {
+                display: none;
+            }
+        }
+    }
+}

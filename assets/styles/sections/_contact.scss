@@ -1,0 +1,78 @@
+.contact {
+
+    .mod-content-one {
+        background-color: $color-one;
+        color: $color-five;
+
+        >.container {
+            @include padding-left();
+
+            @include break3 {
+                @include padding-left-reset();
+            }
+        }
+
+        a {
+            color: $color-five;
+        }
+
+        .col {
+            &:first-child {
+                width: 48%;
+                height: auto !important;
+                overflow: hidden !important;
+
+                @include break3 {
+                    margin-bottom: 30px;
+                    width: 100%;
+                }
+            }
+
+            &:last-child {
+                width: 48%;
+
+                @include break3 {
+                    width: 100%;
+                }
+            }
+        }
+
+        .list {
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: none;
+
+            &.has-hidden {
+                overflow: hidden;
+            }
+
+            &.to-show {
+                opacity: 1;
+                transition: opacity .2s ease-in-out;
+            }
+
+            li {
+                text-transform: none;
+                font-weight: normal;
+                margin-bottom: 12px;
+            }
+        }
+
+    }
+
+    .text {
+        &.long {
+            margin-bottom: 26px;
+        }
+    }
+
+    h2 {
+        font-family: $font-two;
+        font-style: italic;
+        text-transform: none;
+        font-weight: 100;
+        font-size: 7.2vw;
+    }
+
+}

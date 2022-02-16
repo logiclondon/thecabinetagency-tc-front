@@ -1,0 +1,173 @@
+.work {
+    .mod-content-one {
+        background-color: $color-two;
+        color: $color-five;
+
+        >.container {
+            @include padding-left();
+
+            @include break3 {
+                @include padding-left-reset();
+            }
+        }
+
+        h2 {
+            color: $color-one;
+            margin-bottom: 40px;
+
+            em {
+                font-family: $font-two;
+                font-style: italic;
+                color: $color-five;
+                text-transform: none;
+                font-weight: normal;
+                display: block;
+                line-height: .9;
+                margin-bottom: 22px;
+                margin-left: -14px;
+
+                @include break3 {
+                    margin-left: -6px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .content-liquid {
+            a {
+                color:$color-one;
+            }
+        }
+
+        .desc {
+            font-family:$font-one;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    }
+
+    .wrapper-grid {
+        .item {
+            width: calc(50% - 40px);
+            margin: 0 20px;
+            margin-bottom:30px;
+            position: relative;
+            display: block;
+            padding-bottom: 28%;
+            overflow: hidden;
+
+            @include breakmob1 {
+                width:100% !important;
+                width:auto;
+                margin:  0;
+                margin-bottom: 20px;
+                padding-bottom: 54%;
+            }
+
+            &:first-child {
+                width: calc(100% - 40px);
+                padding-bottom: 54%;
+
+                .wave-hover {
+                    top:   210%;
+                    height:300%;
+                    width: 300%;
+                    border-radius: 48%;
+                    left: -100%;
+                }
+            }
+
+            &:last-child {
+
+                @include breakmob1 {
+                    padding-bottom: 0;
+                    padding-top: 30px;
+                }
+
+                .content {
+                    position: absolute;
+                    bottom:0;
+                    left:  0;
+
+                    @include breakmob1 {
+                        position: relative;
+                    }
+                }
+
+                a {
+                    color: $color-one;
+                    display: block;
+                    font-family: $font-one;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    line-height: 1;
+                }
+
+                span {
+                    font-family: $font-two;
+                    font-style: italic;
+                    margin-bottom: 10px;
+                    display: block;
+                    line-height: .95;
+                    margin-bottom: 20px;
+                }
+            }
+
+            &:hover {
+                .content:not(.last) {
+                    opacity: 1;
+                }
+
+                .wave-hover {
+                    top: 0%;
+                    opacity: 1;
+                    transition: transform .7s ease, top 1.5s, opacity .2s ease-in-out;
+                }
+            }
+
+            .content:not(.last) {
+                position: absolute;
+                @include center();
+                width: 80%;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                z-index:10;
+                color: $color-five;
+                text-align: center;
+            }
+
+            h4 {
+                font-style: italic;
+                font-size: $font-main-size + 6;
+                font-family: $font-two;
+                max-width: 500px;
+                margin: auto;
+
+                @include breakmob1 {
+                    font-size: $font-main-size + 2;
+                }
+            }
+
+            .wave-hover {
+                background-color:  $color-one;
+                position: absolute;
+                top:   160%;
+                height:300%;
+                width: 300%;
+                border-radius: 38%;
+                left: -100%;
+                transform: rotate(360deg);
+                transition: transform 1s ease, top 3.5s, opacity .8s ease-in-out;
+                animation: wave-hover 50s linear infinite;
+                opacity: 0;
+            }
+
+            @keyframes wave-hover {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(3600deg); }
+            }
+
+        }
+    }
+}

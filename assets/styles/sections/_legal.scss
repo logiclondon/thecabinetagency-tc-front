@@ -1,0 +1,23 @@
+.legal {
+
+    .mod-content-one {
+        background-color: $color-six;
+
+        >.container {
+            @include padding-left();
+
+            @include break3 {
+                @include padding-left-reset();
+            }
+        }
+    }
+
+    h2 {
+        font-family: $font-two;
+        font-style: italic;
+        text-transform: none;
+        font-weight: 100;
+        color: $color-one;
+    }
+
+}
