@@ -38,8 +38,8 @@ export default {
         ],
     },
 
-    ssr: true,
-    target: 'server',
+    ssr: false,
+    target: 'static',
 
     css: [
         '~/assets/styles/main.scss'
